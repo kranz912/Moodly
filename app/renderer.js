@@ -4,3 +4,11 @@
 // `nodeIntegration` is turned off. Use `preload.js` to
 // selectively enable features needed in the rendering
 // process.
+
+
+const zeromq = require('zeromq')
+const sock =  new zeromq.Push
+
+
+await sock.connect('tcp://0.0.0.0:5555')
+await sock.send('test');
